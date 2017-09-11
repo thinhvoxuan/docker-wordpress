@@ -7,7 +7,6 @@ RUN set -ex; \
 	apt-get install -y \
 		libjpeg-dev \
 		libpng-dev \
-		php7.0-zip \
 	; \
 	rm -rf /var/lib/apt/lists/*; \
 	\
@@ -28,6 +27,7 @@ RUN { \
 
 RUN pecl install xdebug
 RUN docker-php-ext-enable xdebug
+RUN apt-get install -y php7.0-zip
 
 VOLUME /var/www/html
 
